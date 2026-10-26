@@ -72,7 +72,7 @@ func NewPostgresFactory(rootDB *sql.DB, connectionURL *url.URL, callback func(*s
 			callback(db)
 		}
 
-		t.Cleanup(func() { _ = cancel })
+		t.Cleanup(func() { _ = cancel() })
 
 		return db
 	}
